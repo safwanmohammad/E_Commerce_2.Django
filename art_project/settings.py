@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'accounts',
     'store',
     'carts',
+    'orders',
     
 ]
 
@@ -160,3 +161,10 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'babusafu004@gmail.com'
 EMAIL_HOST_PASSWORD = 'wmafwvocoreizduh'
 EMAIL_USE_TLS = True
+
+# paypal settings
+# CSP_DEFAULT_SRC = ("'self'", "'unsafe-inline'", "'unsafe-eval'", "about:blank")
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'

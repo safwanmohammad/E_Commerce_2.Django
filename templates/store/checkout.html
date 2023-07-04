@@ -12,11 +12,12 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title mb-4">Billing Address</h4>
-                        <form action="" method="POST">
+                        <form action="{% url 'place_order' %}" method="POST">
                             {% csrf_token %}
                             <div class="form-row">
                                 <div class="col form-group">
-                                    <input type="text" name="first_name" class="form-control" required placeholder="First Name">
+                                    <input type="text" name="first_name" class="form-control" required
+                                        placeholder="First Name">
                                 </div>
                                 <div class="col form-group">
                                     <input type="text" name="last_name" class="form-control" required
@@ -89,7 +90,7 @@
                                                 <p class="text-muted small">
                                                     {% if cart_item.variations.all %}
                                                     {% for item in cart_item.variations.all %}
-                                                    {{ item.variation_category | capfirst }} : {{ item.variation_value |capfirst }} <br>
+                                                    {{ item.variation_category | capfirst }} : {{ item.variation_value|capfirst }} <br>
                                                     {% endfor %}
                                                     {% endif %}
                                                 </p>
@@ -108,16 +109,16 @@
                                 </tr>
                                 {% endfor %}
                             </tbody>
-                        </table>         
+                        </table>
                         <button type="submit" name="button" class="btn btn-primary btn-block">Place order </button>
                         <a href="{% url 'store' %}" class="btn btn-light btn-block">Continue Shopping</a>
-                    </form>
+                        </form>
                     </div> <!-- card-body.// -->
                 </div> <!-- card.// -->
 
             </aside> <!-- col.// -->
 
-            
+
         </div> <!-- row.// -->
         <!-- ============================ COMPONENT 1 END .// ================================= -->
 
