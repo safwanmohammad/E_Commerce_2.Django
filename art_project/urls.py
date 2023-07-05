@@ -21,7 +21,8 @@ from django.urls import include, path
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('securelogin/', admin.site.urls),
+    # path('admin/',include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('',views.home,name='home'),
     path('cart/',include('carts.urls')),
     path('store/',include('store.urls')),
