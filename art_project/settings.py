@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+from decouple import config
 import os
 from pathlib import Path
 from django.urls import reverse_lazy
@@ -21,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5zlar!$bn$(z-lpxp+-rg%*tm_4j$xb4ly@6$yh%e&qumiiob5'
-
+SECRET_KEY = config('SECRET_KEY')
+#'django-insecure-5zlar!$bn$(z-lpxp+-rg%*tm_4j$xb4ly@6$yh%e&qumiiob5'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG',default=True,cast=bool)
 
 ALLOWED_HOSTS = ['art-env.eba-wzptcqmx.us-west-2.elasticbeanstalk.com']
 
