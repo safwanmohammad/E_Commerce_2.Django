@@ -1,21 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<section class="section-content padding-y bg">
+<section class="section-content padding-y bg" style="    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(80,80,102,1) 37%, rgba(80,80,102,1) 65%, rgba(0,0,0,1) 100%);
+color: wheat;">
   <div class="container">
 
     <!-- ============================ COMPONENT 1 ================================= -->
-    <div class="card">
-      <div class="row no-gutters">
+    <div class="card-dark" >
+      <div class="row ">
         <aside class="col-md-6">
           <article class="gallery-wrap">
             <div class="img-big-wrap mainImage">
-             <center><img src="{{ single_product.images.url }}"> </center>
+              <center><img src="{{ single_product.images.url }}" class="img-fluid"> </center>
             </div> <!-- img-big-wrap.// -->
           </article> <!-- gallery-wrap .end// -->
           <ul class="thumb">
             <li>
-              <a href="{{ single_product.images.url }}" target="mainImage"><img src="{{ single_product.images.url }}" alt="product image"></a>
+              <a href="{{ single_product.images.url }}" target="mainImage"><img src="{{ single_product.images.url }}"
+                  alt="product image"></a>
               {% for i in product_gallary %}
               <a href="{{ i.image.url }}" target="mainImage"><img src="{{ i.image.url }}" alt="product image"></a>
               {% endfor %}
@@ -79,7 +81,7 @@
                 <a href="{% url 'cart' %}" class="btn  btn-outline-primary"> <span class="text">View Cart</span> <i
                     class="fas fa-shopping-cart"></i> </a> -->
 
-                <button type="submit" class="btn  btn-primary"> <span class="text">Add to
+                <button type="submit" class="btn btn-outline-light"> <span class="text">Add to
                     cart</span> <i class="fas fa-shopping-cart"></i> </button>
                 {% endif %}
 
@@ -126,12 +128,12 @@
             <br>
             {% if user.is_authenticated %}
             {% if order_product %}
-            <input type="submit" value="Submit Review" class="btn btn-primary">
+            <input type="submit" value="Submit Review" class="btn btn-outline-success ">
             {% else %}
             <p>You must Purchase the product to Post a review </p>
             {% endif %}
             {% else %}
-            <p>You must be logged into Post a review, <span><a href="{% url 'login' %}">Login now >>></a></span></p>
+            <p>You must be logged into Post a review, <span><a href="{% url 'login' %}">Login now </a></span></p>
             {%endif%}
           </div>
           <br>

@@ -11,8 +11,8 @@
         <div class="row">
             {% include 'include/dashboard-sidebar.html' %}
             <main class="col-md-9">
-                <article class="card">
-                    <header class="card-header">
+                <article class="card edit-card">
+                    <header class="card-header edit-card-header">
                         <strong class="d-inline-block mr-3">Edit Your Profile</strong>
                     </header>
                     <div class="card-body">
@@ -67,7 +67,7 @@
                                             {{profile_form.country}}
                                         </div>
                                     </div>
-                                    <input type="submit" value="save" class="btn btn-primary">
+                                    <input type="submit" value="save" class="btn btn-outline-primary">
                                 </form>
                             </div>
                         </div> <!-- row.// -->

@@ -365,7 +365,9 @@ article:after,
 }
 
 .section-title {
-  color: #212529;
+  color: #ffffff;
+  text-transform: uppercase;
+
 }
 
 .title-text {
@@ -447,7 +449,7 @@ p:last-child {
   position: relative;
 }
 .widget-header a {
-  color: #343a40;
+  color: #969696;
 }
 .widget-header a:hover {
   color: #3167eb;
@@ -467,7 +469,7 @@ p:last-child {
   right: -10px;
 }
 .widget-header:hover i {
-  color: #3167eb;
+  color: #ffffff;
 }
 
 /* desktop only */
@@ -828,7 +830,7 @@ a[class*=card]:hover .title {
 
 /* BASE STYLE FOR PRODUCT ITEM */
 [class*=card-product] a.title {
-  color: #212529;
+  color: #ffffff;
   display: block;
 }
 [class*=card-product] a.title:hover {
@@ -849,7 +851,7 @@ a[class*=card]:hover .title {
 [class*=card-product] .img-wrap img {
   height: 100%;
   max-width: 100%;
-  width: auto;
+  width: 100%;
   display: inline-block;
   -o-object-fit: cover;
      object-fit: cover;
@@ -1060,7 +1062,7 @@ a[class*=card]:hover .title {
 
 .price {
   font-weight: 600;
-  color: #212529;
+  color: #ffffff;
 }
 
 .price-old {
@@ -1268,7 +1270,7 @@ a[class*=card]:hover .title {
   max-width: 46px;
   font-weight: bold;
   flex-basis: 46px;
-  border-color: #e4e4e4;
+  border-color: transparent;
   flex-grow: 0;
 }
 .input-spinner .btn {
@@ -1360,7 +1362,7 @@ a[class*=card]:hover .title {
 }
 .gallery-wrap .img-big-wrap img {
   height: 450px;
-  width: auto;
+  width: 100%;
   display: inline-block;
 }
 .gallery-wrap .thumbs-wrap {

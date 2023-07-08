@@ -62,6 +62,8 @@ def  register(request):
 
 
 def  login(request):
+    if request.user.is_authenticated:
+        return redirect(reverse("dashbord")) 
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']

@@ -11,16 +11,16 @@
     <div class="row">
       {% include 'include/dashboard-sidebar.html' %}
       <main class="col-md-9">
-        <article class="card">
-          <header class="card-header">
+        <article class="card order-card">
+          <header class="card-header card-header-order">
             <strong class="d-inline-block mr-3">Your Order History</strong>
           </header>
           <div class="card-body">
             <div class="row">
-              <div class="col-md-12">
+              <div class="col-sm-12">
                 <table class="table table-hover">
                   <thead>
-                    <tr>
+                    <tr class="th-edit">
                       <th scope="col">Order #</th>
                       <th scope="col">Billing Name</th>
                       <th scope="col">Phone</th>
@@ -28,14 +28,14 @@
                       <th scope="col">Date</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody >
                     {% for i in order %}
                     <tr>
-                      <th scope="row"><a href="{% url 'order_detail' i.order_number %}">{{i.order_number}}</a></th>
-                      <td>{{i.ful_name}}</td>
-                      <td>{{i.phone}}</td>
-                      <td>${{i.order_total}}</td>
-                      <td>{{i.created_at}}</td>
+                      <td ><a class="order-a" href="{% url 'order_detail' i.order_number %}">{{i.order_number}}</a></td>
+                      <td class="tr-my-order text-muted">{{i.ful_name}}</td>
+                      <td class="tr-my-order text-muted">{{i.phone}}</td>
+                      <td class="tr-my-order text-muted">${{i.order_total}}</td>
+                      <td class="tr-my-order text-muted">{{i.created_at}}</td>
                     </tr>
                     {% endfor %}
                   </tbody>
