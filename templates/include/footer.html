@@ -11,9 +11,9 @@
 				<span  class="px-2">Bangalour</span>
 			</div>
 			<div class="col-md-2 text-md-right text-muted">
-				<i class="fab fa-lg fa-cc-visa"></i>
-				<i class="fab fa-lg fa-cc-paypal"></i>
-				<i class="fab fa-lg fa-cc-mastercard"></i>
+				<i class="fab fa-lg fa-cc-visa text-primary"></i>
+				<i class="fab fa-lg fa-cc-paypal text-warning"></i>
+				<i class="fab fa-lg fa-cc-mastercard text-danger"></i>
 			</div>
 		</section>
 	</div><!-- //container -->
@@ -25,7 +25,7 @@
 	$(document).ready(function(){
 		$('.thumb a').click(function(e){
 			e.preventDefault();
-			$('.mainImage img').attr('src',$(this).attr("href"));
+			$('.mainImage img').attr('src',$(this).attr("href"))
 		})
 	})
 </script>

@@ -52,12 +52,6 @@ $(document).ready(function() {
 	} // end 
     
 
-    setTimeout(function(){
-        $('#mess').fadeOut()
-    },4000);
-
-
-    
 }); 
 // jquery end
 

@@ -51,10 +51,15 @@ $(document).ready(function() {
 		$('[data-toggle="tooltip"]').tooltip()
 	} // end if
 
+    setTimeout(function(){
+        $('#mess').fadeOut()
+    },4000);
 
-
+    setTimeout(function(){
+        $('#messd').fadeOut()
+    },0);
 
     
 }); 
-// jquery end
+// jquery en
 

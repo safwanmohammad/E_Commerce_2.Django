@@ -3,6 +3,7 @@ from django.urls import reverse
 from category.models import Category
 from accounts.models import Account
 from django.db.models import Avg,Count
+
 # Create your models here.
 
 class Product(models.Model):

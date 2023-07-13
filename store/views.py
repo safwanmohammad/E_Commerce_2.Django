@@ -18,7 +18,7 @@ def store(request,category_slug=None):
     if category_slug != None:
         categories = get_object_or_404(Category,slug=category_slug)
         Products = Product.objects.filter(category=categories,is_available=True)
-        paginator = Paginator(Products,1)
+        paginator = Paginator(Products,3)
         page = request.GET.get('page')
         paged_products = paginator.get_page(page)
         Products_count = Products.count()

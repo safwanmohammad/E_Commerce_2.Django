@@ -378,7 +378,10 @@ article:after,
 }
 
 .title-page {
-  color: #212529;
+  color: #8ec7ffcc;
+  text-align: center;
+  text-transform: uppercase;
+  
 }
 
 .text-lg {
@@ -799,10 +802,10 @@ ul.row, ul.row-sm {
   margin-bottom: 5px;
 }
 .list-menu a {
-  color: #343a40;
+  color:antiquewhite;
 }
 .list-menu a:hover {
-  color: #3167eb;
+  color: antiquewhite;
 }
 
 .cols-two {

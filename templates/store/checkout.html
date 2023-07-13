@@ -81,8 +81,12 @@
                                 <tr>
                                     <td>
                                         <figure class="itemside align-items-center">
-                                            <div class="aside"><img src="{{ cart_item.product.images.url }}"
-                                                    class="img-sm">
+                                            <div class="aside">
+                                                {% if 'cart_item.product.images.url' %}
+                                                <img src="{{ cart_item.product.images.url }}" class="img-sm">
+                                                {% else %}
+                                                <img src="{% static 'images/background-product.jpeg' %}" class="img-sm">
+                                                {% endif %} 
                                             </div>
                                             <figcaption class="info">
                                                 <a href="{{ cart_item.product.get_url }}"

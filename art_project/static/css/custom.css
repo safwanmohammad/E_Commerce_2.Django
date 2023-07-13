@@ -123,7 +123,7 @@ ul.thumb li img{
     color: aliceblue;
 }
 /* ordr_complatet */
-.section-complete{
+.section-complete,.section-pagetop{
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(80,80,102,1) 37%, rgba(80,80,102,1) 65%, rgba(0,0,0,1) 100%);
 }
 .invoice-1{
@@ -232,3 +232,61 @@ ul.thumb li img{
 .order-a:hover{
     color: wheat;
 }
+/* signin page */
+.signin-card{
+    text-transform: uppercase;
+    color: antiquewhite;
+    background: none;
+    border: 1px solid white;
+}
+.card-title{
+    align-items: center;
+}
+/* store page  */
+.section-content{
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(80,80,102,1) 37%, rgba(80,80,102,1) 65%, rgba(0,0,0,1) 100%);
+}
+.store-card{
+    background: none;
+    border:1px solid white;
+    text-align: center;
+}
+.page-link{
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #ffffff;
+    background: none;
+    border: none;
+    
+}
+@media (max-width: 575.98px) {
+    .space-1{
+        max-width: 27%;
+    }
+    .space-2{
+        max-width: 100%;
+    }
+    .spacetop{
+        margin-top: 18px;
+    }
+}
+/* .notifyy {
+    position: absolute;
+    top: -14px;
+    right: -6px;
+    display: inline-block;
+
+    font-size: 25px;
+    line-height: 1;
+    text-align: center;
+    border-radius: 3rem;
+    color: #fff;
+  }
+  .badge-pillw {
+    padding-right: 0.6em;
+    padding-left: 0.6em;
+    border-radius: 10rem;
+  } */

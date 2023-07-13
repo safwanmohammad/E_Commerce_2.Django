@@ -3070,7 +3070,7 @@ input[type=button].btn-block {
   list-style: none;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+
   border-radius: 0.37rem;
 }
 
@@ -3222,11 +3222,11 @@ input[type=button].btn-block {
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
-  color: #212529;
+  color: #ffffff;
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
-  border: 0;
+  border: none;
 }
 .dropdown-item:hover, .dropdown-item:focus {
   color: #16181b;
