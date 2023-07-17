@@ -39,17 +39,23 @@ class Product(models.Model):
             return count
 
 class VariationMangaer(models.Manager):
-    def format(self):
-        return super(VariationMangaer,self).filter(variation_category='format',is_active=True)
+    def Dimensions(self):
+        return super(VariationMangaer,self).filter(variation_category='Dimensions',is_active=True)
 
-    def size(self):
-        return super(VariationMangaer,self).filter(variation_category='size',is_active=True)
+    def Type(self):
+        return super(VariationMangaer,self).filter(variation_category='Type',is_active=True)
+    
+    def size_0_9(self):
+        return super(VariationMangaer,self).filter(variation_categorys='0-9',is_active=True)
+    def size_10_5(self):
+        return super(VariationMangaer,self).filter(variation_categorys='10-5',is_active=True)
+    def size_6_10(self):
+        return super(VariationMangaer,self).filter(variation_categorys='6-10',is_active=True)
 
 
 variation_category_choice = (
-    ('format','format'),
-    ('size','size'),
-    
+    ('Dimensions','Dimensions'),
+    ('Type','Type'),
 )
 
 
@@ -88,3 +94,21 @@ class productGallery(models.Model):
     class Meta:
         verbose_name = 'productgallery'
         verbose_name_plural = 'product gallery'
+
+variation_categorys = (
+    ('0-9', '0-9'),
+    ('10-15', '10-15'),
+    ('6-10', '6-10'),
+)
+
+class VariationPrice(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    variation_category = models.CharField(max_length=50, choices=variation_categorys,default='10-15')
+    var_price = models.IntegerField()
+    is_active = models.BooleanField(default=True)
+    created_date = models.DateTimeField(auto_now=True)
+
+    objects = VariationMangaer()
+
+    def __str__(self):
+        return self.product.product_name

@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             {% include 'include/dashboard-sidebar.html' %}
-            <main class="col-md-9">
+            <main class="col-md-8 col-sm-12">
                 <article class="card dashbord-card">
                     <header class="card-header card-header-1">
                         <strong class="d-inline-block mr-3">Logged In As : </strong>
@@ -29,8 +29,11 @@
                             <div class="col-md-6">
                                 <div class="card dashbord-card-1" style="text-align: center;">
                                     <div class="card-body">
-                                        <img src="{{ userprofile.profile_picture.url}}" alt="User Profile Picture"
-                                            width="50" height="50" style="border-radius: 50%;">
+                                        {% if userprofile.profile_picture and userprofile.profile_picture.url %}
+                                        <img src="{{ userprofile.profile_picture.url}}" alt="User Profile Picture" width="50" height="50" style="border-radius: 50%;">
+                                        {% else %}
+                                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="User Profile Picture" width="50" height="50" style="border-radius: 50%;">
+                                        {% endif %}
                                         <p class="mb-0 text-muted">{{user.email}}</p>
                                         <p class="text-muted">{{user.phone_number}}</p>
                                     </div>

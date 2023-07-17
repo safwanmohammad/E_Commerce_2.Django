@@ -65,13 +65,9 @@
 				<hr class="bg-primary">
 				<div class="row">
 					{% for i in products %}
-					<div class="col-md-3">
-						<div class=" card-product-grid cus-card">
-							{% if '{{i.images.url}}' %}
+					<div class="col-6 col-sm-4 col-md-4 col-lg-3">
+						<div class=" card-product-grid cus-card" style="height:95%;">
 							<a href="{{i.get_url}}" class="img-wrap "><img src="{{i.images.url}}" alt=""></a>
-							{% else %}
-							<a href="{{i.get_url}}" class="img-wrap "><img src="{% static 'images/background-product.jpeg' %}" alt=""></a>
-							{% endif %}
 							<figcaption class="info-wrap">
 								<a href="{{i.get_url}}" class="title">{{ i.product_name }}</a>
 								<div class="price mt-1">${{i.price}}.00</div>

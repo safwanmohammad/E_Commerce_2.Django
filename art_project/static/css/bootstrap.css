@@ -479,7 +479,7 @@ mark,
   content: "— ";
 }
 
-.img-fluid {
+.fluid {
   max-width: 100%;
   height: auto;
 }
@@ -3222,8 +3222,8 @@ input[type=button].btn-block {
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
-  color: #ffffff;
-  text-align: inherit;
+  color: antiquewhite;
+  text-align: center;
   white-space: nowrap;
   background-color: transparent;
   border: none;
@@ -4060,6 +4060,8 @@ input[type=button].btn-block {
 .navbar-nav .dropdown-menu {
   position: static;
   float: none;
+  border: 1px solid white;
+  background: linear-gradient(90deg, rgba(80,80,102,1) 37%, rgba(80,80,102,1) 65%);
 }
 
 .navbar-text {

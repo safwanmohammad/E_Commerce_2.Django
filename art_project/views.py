@@ -4,12 +4,13 @@ from store.models import ReviewRating
 from category.models import Category
 from django.core.paginator import Paginator
 def home(request):
-    products = Product.objects.all().filter(is_available=True).order_by('-created_date')
+    products = Product.objects.all().filter(is_available=True).order_by('price')
     category = Category.objects.all()
     print(category)
     
     for product in products:
         reviews = ReviewRating.objects.filter(product_id=product.id,status=True)
+        
     context = {
         'products':products,
         'reviews':reviews,

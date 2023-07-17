@@ -10,15 +10,18 @@
     <div class="container">
         <div class="row">
             {% include 'include/dashboard-sidebar.html' %}
-            <main class="col-md-9">
+            <main class="col-md-8 col-sm-12">
                 <article class="card edit-card">
                     <header class="card-header edit-card-header">
                         <strong class="d-inline-block mr-3">Edit Your Profile</strong>
                     </header>
                     <div class="card-body">
                         <div class="text-center">
-                            <img src="{{userprofile.profile_picture.url}}" alt="profile picture" width="100"
-                                style="border-radius: 50%;">
+                            {% if userprofile.profile_picture and userprofile.profile_picture.url %}
+                            <img src="{{ userprofile.profile_picture.url}}" alt="User Profile Picture" width="100" style="border-radius: 50%;">
+                            {% else %}
+                            <img src="https://www.w3schools.com/howto/img_avatar.png" alt="User Profile Picture" width="50" style="border-radius: 50%;">
+                            {% endif %}
                         </div>
                         <br>
                         <div class="row">

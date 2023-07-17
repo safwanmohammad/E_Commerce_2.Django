@@ -3,18 +3,19 @@
 {% block content %}
 <!-- ========================= SECTION PAGETOP ========================= -->
 <section class="section-pagetop bg">
-    <div class="container">
+    <div class="container" style="margin-top: 20px;">
         {% if 'search' in request.path %}
         <h2 class="title-page">Search Result </h2>
+        {% elif categories %}
+        <h2 class="title-page">{{categories.category_name}}</h2>
         {% else %}
         <h2 class="title-page">Our Store</h2>
         {% endif %}
-
     </div> <!-- container //  -->
 </section>
 <!-- ========================= SECTION INTRO END// ========================= -->
 <!-- ========================= SECTION CONTENT ========================= -->
-<section class="section-content padding-y">
+<section class="section-content padding-yy">
     <div class="container">
         <div class="row">
             <aside class="col-md-3">
@@ -37,106 +38,23 @@
                             </div> <!-- card-body.// -->
                         </div>
                     </article> <!-- filter-group  .// -->
-                    <!-- <article class="filter-group">
-                        <header class="card-header">
-                            <a href="#" data-toggle="collapse" data-target="#collapse_4" aria-expanded="true" class="">
-                                <i class="icon-control fa fa-chevron-down"></i>
-                                <h6 class="title">Sizes </h6>
-                            </a>
-                        </header>
-                        <div class="filter-content collapse show" id="collapse_4" style="">
-                            <div class="card-body">
-                                <label class="checkbox-btn">
-                                    <input type="checkbox">
-                                    <span class="btn btn-light"> XS </span>
-                                </label>
-
-                                <label class="checkbox-btn">
-                                    <input type="checkbox">
-                                    <span class="btn btn-light"> SM </span>
-                                </label>
-
-                                <label class="checkbox-btn">
-                                    <input type="checkbox">
-                                    <span class="btn btn-light"> LG </span>
-                                </label>
-
-                                <label class="checkbox-btn">
-                                    <input type="checkbox">
-                                    <span class="btn btn-light"> XXL </span>
-                                </label>
-                            </div>
-                        </div>
-                    </article> -->
-
-                    <!-- <article class="filter-group">
-                        <header class="card-header">
-                            <a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
-                                <i class="icon-control fa fa-chevron-down"></i>
-                                <h6 class="title">Price range </h6>
-                            </a>
-                        </header>
-                        <div class="filter-content collapse show" id="collapse_3" style="">
-                            <div class="card-body">
-
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label>Min</label>
-                                        <select class="mr-2 form-control">
-                                            <option value="0">$0</option>
-                                            <option value="50">$50</option>
-                                            <option value="100">$100</option>
-                                            <option value="150">$150</option>
-                                            <option value="200">$200</option>
-                                            <option value="500">$500</option>
-                                            <option value="1000">$1000</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group text-right col-md-6">
-                                        <label>Max</label>
-                                        <select class="mr-2 form-control">
-                                            <option value="50">$50</option>
-                                            <option value="100">$100</option>
-                                            <option value="150">$150</option>
-                                            <option value="200">$200</option>
-                                            <option value="500">$500</option>
-                                            <option value="1000">$1000</option>
-                                            <option value="2000">$2000+</option>
-                                        </select>
-                                    </div>
-                                </div> 
-                                <button class="btn btn-block btn-primary">Apply</button>
-                            </div>
-                        </div>
-                    </article>  -->
-
                 </div> <!-- card.// -->
-
             </aside> <!-- col.// -->
             <main class="col-md-9 ">
-
                 <header class="border-bottom mb-4 pb-3">
                     <div class="form-inline">
                         <span class="mr-md-auto"> <b class="text-muted">found {{Products_count}} items</b></span>
-
                     </div>
                 </header><!-- sect-heading -->
-
                 <div class="row ">
                     {% if Products %}
                     {% for i in Products %}
-                    <div class="col-md-4">
+                    <div class="col-6 col-sm-4 col-md-3">
                         <figure class="card card-product-grid store-card">
                             <div class="img-wrap">
-                                {% if 'i.images.url' %}
                                 <a href="{{i.get_url}}">
                                     <img src="{{i.images.url}}">
                                 </a>
-                                {% else %}
-                                <a href="{{i.get_url}}">
-                                    <img src="{% static 'images/background-product.jpeg' %}">
-                                </a>
-                                {% endif %}
                             </div> <!-- img-wrap.// -->
                             <figcaption class="info-wrap">
                                 <div class="fix-height">
@@ -153,12 +71,10 @@
                     {% endfor %}
                     {% else %}
                     <div>
-                        <h2>No result found....</h2>
+                        <h2 style="color: antiquewhite;">No result found....</h2>
                     </div>
                     {% endif %}
                 </div> <!-- row end.// -->
-
-
                 <nav class="mt-4 center" aria-label="Page navigation sample" style="display: flex;
                 justify-content: center;">
                     {% if Products.has_other_pages %}
@@ -184,11 +100,8 @@
                     </ul>
                     {% endif %}
                 </nav>
-
             </main> <!-- col.// -->
-
         </div>
-
     </div> <!-- container .//  -->
 </section>
 <!-- ========================= SECTION CONTENT END// ========================= -->

@@ -6,47 +6,45 @@
 <!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-conten padding-y bg">
   {% include 'include/alert.html' %}
-
   <div class="container">
     <div class="row">
       {% include 'include/dashboard-sidebar.html' %}
-      <main class="col-md-9">
+      
+      <main class="col-md-8 col-sm-12">
         <article class="card order-card">
           <header class="card-header card-header-order">
             <strong class="d-inline-block mr-3">Your Order History</strong>
           </header>
           <div class="card-body">
-            <div class="row">
-              <div class="col-sm-12">
-                <table class="table table-hover">
-                  <thead>
-                    <tr class="th-edit">
-                      <th scope="col">Order #</th>
-                      <th scope="col">Billing Name</th>
-                      <th scope="col">Phone</th>
-                      <th scope="col">Order Total</th>
-                      <th scope="col">Date</th>
-                    </tr>
-                  </thead>
-                  <tbody >
-                    {% for i in order %}
-                    <tr>
-                      <td ><a class="order-a" href="{% url 'order_detail' i.order_number %}">{{i.order_number}}</a></td>
-                      <td class="tr-my-order text-muted">{{i.ful_name}}</td>
-                      <td class="tr-my-order text-muted">{{i.phone}}</td>
-                      <td class="tr-my-order text-muted">${{i.order_total}}</td>
-                      <td class="tr-my-order text-muted">{{i.created_at}}</td>
-                    </tr>
-                    {% endfor %}
-                  </tbody>
-                </table>
-              </div>
-            </div> <!-- row.// -->
-          </div> <!-- card-body .// -->
-          <div class="table-responsive">
-          </div> <!-- table-responsive .end// -->
-        </article> <!-- order-group.// -->
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr class="th-edit">
+                    <th scope="col">Order #</th>
+                    <th scope="col">Billing Name</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Order Total</th>
+                    <th scope="col">Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for i in order %}
+                  <tr>
+                    <td><a class="order-a" href="{% url 'order_detail' i.order_number %}">{{i.order_number}}</a></td>
+                    <td class="tr-my-order text-muted">{{i.ful_name}}</td>
+                    <td class="tr-my-order text-muted">{{i.phone}}</td>
+                    <td class="tr-my-order text-muted">${{i.order_total}}</td>
+                    <td class="tr-my-order text-muted">{{i.created_at}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div> <!-- table-responsive -->
+          </div> <!-- card-body -->
+        </article> <!-- order-card -->
       </main>
+      
+   
     </div> <!-- row.// -->
   </div>
 

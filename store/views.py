@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404,redirect
-from .models import Product,ReviewRating,productGallery
+from .models import Product,ReviewRating,productGallery,VariationPrice,Variation
 from category.models import Category
 from carts.models import CartItem
 from carts.views import _cart_id
@@ -18,19 +18,20 @@ def store(request,category_slug=None):
     if category_slug != None:
         categories = get_object_or_404(Category,slug=category_slug)
         Products = Product.objects.filter(category=categories,is_available=True)
-        paginator = Paginator(Products,3)
+        paginator = Paginator(Products,4)
         page = request.GET.get('page')
         paged_products = paginator.get_page(page)
         Products_count = Products.count()
     else:
-        Products = Product.objects.all().filter(is_available=True).order_by('id')
-        paginator = Paginator(Products,6)
+        Products = Product.objects.all().filter(is_available=True).order_by('-product_name')
+        paginator = Paginator(Products,8)
         page = request.GET.get('page')
         paged_products = paginator.get_page(page)
         Products_count = Products.count()
 
     
     context = {
+        'categories':categories,
         'Products':paged_products,
         'Products_count':Products_count,
     }
@@ -56,12 +57,30 @@ def product_detail(request,category_slug,product_slug):
 
     # get the product gallary
     product_gallary = productGallery.objects.filter(product_id=single_product.id)
+    product_price = VariationPrice.objects.all().filter(product_id=single_product.id,)
+    # adding price list to the template
+    variation_prices = VariationPrice.objects.filter(product_id=single_product.id,is_active=True)
+    var_prices = []
+    for variation_price in variation_prices:
+        variation_category = variation_price.variation_category
+        var_price = variation_price.var_price
+        var_prices.append(var_price)
+        var_prices.sort()
+        print(var_prices)
+        print(f"Variation Category: {variation_category}")
+        print(f"Variation Price: {var_price}")
+        print()
+    
     context = {
+        # 'variation_category':variation_category,
+        'var_prices':var_prices,
+        'variation_prices':variation_prices,
         'single_product':single_product,
         'in_cart': in_cart,
-        'order_product':order_product,
+        'order_product':order_product,  
         'reviews':reviews,
         'product_gallary':product_gallary,
+        'product_price':product_price,
     }
 
     return render(request,'store/product_detail.html',context)
